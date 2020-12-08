@@ -1,0 +1,379 @@
+/* Primaire 
+#9356DC 
+Secondaire
+#FF79DA 
+Tertiaire
+#99E2D0 */
+
+@font-face {
+    font-family: shirkhand;
+    src: url(../../Shrikhand-font/Shrikhand-Regular.ttf);
+}
+@font-face {
+    font-family: roboto;
+    src: url(../../Roboto/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: roboto-light;
+    src: url(../../Roboto/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: roboto-bold;
+    src: url(../../Roboto/Roboto-Bold.ttf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: roboto;
+    z-index: 0;
+}
+
+body {
+    position: relative;
+}
+
+/*   LOADER   */
+.loader-container {
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    position: absolute;
+    animation-duration: 3s;
+    animation-name: loader;
+}
+.loader {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.loader-spinner {
+    position: fixed;
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 10px solid#fff;
+    border-bottom-color: transparent;
+    animation-duration: 3s;
+    animation-name: spinner;
+    animation-timing-function: linear;
+    visibility: hidden;
+}
+
+@keyframes spinner {
+    0% { visibility: visible;
+        transform: rotate(0deg); 
+    }
+    99% {
+        visibility: visible;
+        transform: rotate(1560deg);
+    }
+    100%{
+        z-index: -1;
+        visibility: hidden;
+    }
+}
+
+@keyframes loader {
+    0% {
+        background-color : #9e69e0;
+        z-index: 2;
+    }
+    99% {
+        z-index: 2;
+        background-color : #9e69e0;
+    }
+    100%{
+        z-index: -1;
+  }
+}
+
+
+/*   HEADER   */
+h1 {
+    font-family: shirkhand;
+    text-align: center;
+}
+
+/*   LOCALISATION   */
+.localisation {
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    background-color: #eaeaea;
+    box-shadow: inset 0px 11px 3px -9px #CCC;
+}
+.localisation-element {
+    width: 93%;
+    height: 100%;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+.localisation i{
+    color: #414141;
+    font-size: 16px;
+}
+.localisation h4 {
+    font-family: roboto;
+    color: #414141;
+    margin-left: 15px;
+    font-size: 16px;
+
+}
+
+/*   RESERVATION   */
+
+.reservation {
+    width: 100%;
+    background-color: #f6f6f6;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px 40px;
+}
+.reservation * {
+    font-family: roboto;
+    padding-bottom: 10px;
+}
+.reservation h3 {
+    font-family: roboto-bold;
+}
+.reservation > p {
+    font-family: roboto-light;
+}
+.reservation  button {
+    margin: 10px 0px;
+    padding: 15px 15px 15px 15px;
+    border: none;
+    border-radius: 30px;
+    outline: none;
+    cursor: pointer;
+    background-color: #9e69e0;
+    background: linear-gradient(169deg, rgba(239,145,222,1) 3%, rgba(161,98,219,1) 87%);
+    transition: 0.3s ease-in;
+}
+
+.reservation button:hover {
+    box-shadow: 0px 0px 10px 2px #000000;
+    /* l'effet de saut direct à l'animation est du au fait 
+    que grandient n'est pas supporter par les navigateurs 
+    avec la proprieté transition */
+    background: #cf6ed8;
+}
+
+
+
+.reservation > button a,
+.reservation > button a:visited {
+    color: #fff;
+    text-decoration: none;
+    width: fit-content;
+    height: auto;
+}
+
+
+/*   FONCTIONNEMENT   */
+
+.fonctionnement {
+    margin-bottom: 40px;
+}
+.fonctionnement h2 {
+    margin: 40px 0px 30px 30px;
+}
+.card-fonctionnement{
+    margin: 10px 0px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.etape {
+    margin: 10px 0px;
+    position: relative;
+    background-color: #f6f6f6;
+    width: 80%;
+    height: 70px;
+    padding-left: 30px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 7px 9px rgba(0, 0, 0, 0.1); 
+	-webkit-box-shadow: 0 7px 9px rgba(0, 0, 0, 0.1); 
+    -moz-box-shadow: 0 7px 9px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    transition: 0.3s; 
+}
+.etape:hover {
+    background-color: #f5edff;
+    box-shadow: 10px 20px 19px rgba(0, 0, 0, 0.1); 
+
+}
+
+.etape > i {
+    transition: 0.3s; 
+}
+
+.etape:hover > i {
+    color: #9e69e0;
+}
+.etape > i {
+    padding-left: 10px;
+    color: #bdbdbd;
+}
+
+.etape > p {
+    padding-left: 20px;
+    font-family: roboto-bold;
+}
+
+
+.num {
+    position: absolute;
+    top: 23px;
+    left: -10px;
+    background-color: #9e69e0;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+/*   RESTAURANTS   */
+.restaurant {
+    background-color: #efefef;
+}
+
+.restaurant h2 {
+    padding-top: 40px;
+    margin: 0px 0px 20px 20px;  
+}
+
+.cards-restaurant-container {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 70px;
+}
+
+.card-restaurant {
+    position: relative;
+    width: 90%;
+    background-color: #fff;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    transition: all 0.5s ease;
+
+}
+
+.card-restaurant:hover {
+    box-shadow: 0px 0px 10px 2px #424242;
+    width: 93%;
+}
+
+.card-restaurant a {
+    text-decoration: none;
+    color: #000;
+    outline: none;
+}
+
+.card-restaurant h4 {
+    padding-bottom: 5px;
+}
+
+.card-restaurant .like-button {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 170px;
+    left: 90%;
+
+}
+
+
+.like-button button {
+    outline: none;
+    border: none;
+    background-color: #fff;
+    font-size: 20px;
+    cursor: grab;
+    
+}
+
+.like-button button:hover {
+    background: -webkit-linear-gradient(45deg, rgba(239,145,222,1) 3%, rgba(161,98,219,1) 87%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    border: none;
+
+}  
+
+.like-button span label:hover {
+
+}
+
+
+
+.text-card {
+    position: relative;
+    padding: 15px 0px 15px 15px;
+}
+
+.card-restaurant img {
+    width: 100%;
+    height: 150px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    object-fit: cover;
+}
+
+.card-restaurant a > p {
+    position: absolute;
+    padding: 10px;
+    background-color: #98e1cf;
+    color: #35a78b;font-weight: bold;
+    top: 15px;
+    right: 2%;
+}
+
+/*   FOOTER   */
+
+footer {
+    background-color: #353535;
+    padding: 30px;
+}
+
+footer h2 {
+    color: #fff;
+    font-family: shirkhand;
+    margin-bottom: 20px;
+}
+footer ul {
+    list-style: none;
+    color: #fff;
+}
+footer ul li {
+    margin: 10px 0px;
+}
+footer ul li a {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+footer ul li i {
+    padding-right: 5px;
+} 

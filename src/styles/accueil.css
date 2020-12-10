@@ -1,10 +1,3 @@
-/* Primaire 
-#9356DC 
-Secondaire
-#FF79DA 
-Tertiaire
-#99E2D0 */
-
 @font-face {
     font-family: shirkhand;
     src: url(../../Shrikhand-font/Shrikhand-Regular.ttf);
@@ -12,10 +5,6 @@ Tertiaire
 @font-face {
     font-family: roboto;
     src: url(../../Roboto/Roboto-Regular.ttf);
-}
-@font-face {
-    font-family: roboto-light;
-    src: url(../../Roboto/Roboto-Light.ttf);
 }
 @font-face {
     font-family: roboto-bold;
@@ -149,7 +138,7 @@ h1 {
 .reservation > p {
     font-family: roboto-light;
 }
-.reservation  button {
+.reservation  a {
     margin: 10px 0px;
     padding: 15px 15px 15px 15px;
     border: none;
@@ -161,7 +150,7 @@ h1 {
     transition: 0.3s ease-in;
 }
 
-.reservation button:hover {
+.reservation a:hover {
     box-shadow: 0px 0px 10px 2px #000000;
     /* l'effet de saut direct à l'animation est du au fait 
     que grandient n'est pas supporter par les navigateurs 
@@ -174,8 +163,8 @@ h1 {
 
 
 
-.reservation > button a,
-.reservation > button a:visited {
+.reservation > a,
+.reservation > a:visited {
     color: #fff;
     text-decoration: none;
     width: fit-content;
@@ -214,6 +203,12 @@ h1 {
     -moz-box-shadow: 0 7px 9px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
     transition: 0.3s; 
+}
+@media (min-width: 600px) {
+    .etape {
+        width: 60% !important;
+
+    }
 }
 .etape:hover {
     background-color: #f5edff;
@@ -282,6 +277,13 @@ h1 {
 
 }
 
+@media (min-width: 600px) {
+    .card-restaurant {
+        width: 60% !important;
+
+    }
+}
+
 .card-restaurant:hover {
     box-shadow: 0px 0px 10px 2px #424242;
     width: 93%;
@@ -322,13 +324,7 @@ h1 {
     -webkit-text-fill-color: transparent;
     border: none;
 
-}  
-
-.like-button span label:hover {
-
 }
-
-
 
 .text-card {
     position: relative;

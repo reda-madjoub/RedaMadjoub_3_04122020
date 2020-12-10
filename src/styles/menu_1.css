@@ -82,7 +82,7 @@ header h1 {
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;  
 }
-.entete-container .entete h1 {
+.entete-container .entete h2 {
     font-family: shirkhand;
 }
 .entete-container .entete button {
@@ -110,19 +110,23 @@ background-color: #f6f6f6;
     padding: 10px;
 }
 
-.menu .titre h1{
+.menu .titre h2{
     padding-bottom: 2px;
     font-size: 22px;
 }
 
 .menu .titre hr{
     height: 4px;
-    width: 70px;
+    width: 50px;
     border: none;
     background-color: #99E2D0 ;
 }
 
+
+
 .categorie-plat {
+    top: 20px;
+    position: relative;
     background-color: #fff;
     width: 90%;
     height: 70px;
@@ -134,7 +138,35 @@ background-color: #f6f6f6;
     justify-content: space-between;
     align-items: center;
     overflow: hidden;
+    opacity: 0;
+    animation: fadeIn 0.5s ease-in both, top 0.5s linear;
 }
+
+.categorie-plat:nth-of-type(1) {
+    animation-delay: 0s;
+}
+.categorie-plat:nth-of-type(2) {
+    animation-delay: 0.1s;
+}
+.categorie-plat:nth-of-type(3) {
+    animation-delay: 0.2s;
+}
+
+
+
+@keyframes fadeIn {
+	from {
+        top: 20px;
+        opacity: 0;
+        
+	}
+	to {
+        top: 0px;
+		opacity: 1;
+
+	}
+}
+
 
 .categorie-plat .text {
     border-top-left-radius: 15px;
@@ -248,15 +280,14 @@ background-color: #f6f6f6;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 40px 40px;
+    padding: 10px 10px;
     font-family: roboto;
-    padding-bottom: 100px;
 }
-.commander button {
+.commander a {
     width: 150px;
     font-size: 16px;
-    margin: 10px 0px;
-    padding: 15px 15px 15px 15px;
+    margin: 5px 0px 40px 0px;
+    padding: 15px 35px 15px 35px;
     border: none;
     border-radius: 30px;
     outline: none;
@@ -266,7 +297,7 @@ background-color: #f6f6f6;
     transition: 0.3s ease-in;
 }
 
-.commander button:hover {
+.commander a:hover {
     box-shadow: 0px 0px 10px 2px #000000;
     /* l'effet de saut direct à l'animation est du au fait 
     que grandient n'est pas supporter par les navigateurs 
@@ -274,8 +305,8 @@ background-color: #f6f6f6;
     background: #cf6ed8;
 }
 
-.commander > button a,
-.commander > button a:visited {
+.commander > a,
+.commander > a:visited {
     color: #fff;
     text-decoration: none;
     width: fit-content;
@@ -294,6 +325,7 @@ footer h2 {
     color: #fff;
     font-family: shirkhand;
     margin-bottom: 20px;
+    font-weight: 400;
 }
 footer ul {
     list-style: none;

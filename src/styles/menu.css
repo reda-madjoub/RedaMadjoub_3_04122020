@@ -139,7 +139,7 @@ background-color: #f6f6f6;
     align-items: center;
     overflow: hidden;
     opacity: 0;
-    animation: fadeIn 0.5s ease-in both, top 0.5s linear;
+    animation: fadeIn 0.7s ease-in both, top 0.5s linear;
 }
 
 .categorie-plat:nth-of-type(1) {
@@ -156,7 +156,7 @@ background-color: #f6f6f6;
 
 @keyframes fadeIn {
 	from {
-        top: 20px;
+        top: 40px;
         opacity: 0;
         
 	}
@@ -292,18 +292,20 @@ background-color: #f6f6f6;
     border-radius: 30px;
     outline: none;
     cursor: pointer;
-    background-color: #9e69e0;
-    background: linear-gradient(169deg, rgba(239,145,222,1) 3%, rgba(161,98,219,1) 87%);
-    transition: 0.3s ease-in;
+    box-shadow: 0px 0px 10px 2px #555555;
+    transition: all 0.4s linear;
+    /* background: linear-gradient(169deg, rgb(239, 145, 222) 3%, rgb(161, 98, 219) 87%); */
 }
 
 .commander a:hover {
-    box-shadow: 0px 0px 10px 2px #000000;
     /* l'effet de saut direct à l'animation est du au fait 
     que grandient n'est pas supporter par les navigateurs 
     avec la proprieté transition */
-    background: #cf6ed8;
+    box-shadow: 0px 0px 10px 3px #555555;
+    animation: gradient-anim 1s ease;
 }
+
+
 
 .commander > a,
 .commander > a:visited {

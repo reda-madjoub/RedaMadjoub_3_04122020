@@ -292,18 +292,46 @@ background-color: #f6f6f6;
     border-radius: 30px;
     outline: none;
     cursor: pointer;
-    box-shadow: 0px 0px 10px 2px #555555;
-    transition: all 0.4s linear;
-    background-image: linear-gradient(180deg, #ef91de, #a162db);
+    box-shadow: 0px 0px -1px 1.5px #a5a5a5;
+    background-size: 200%;
+    background-image: linear-gradient(90deg ,#ef91de, #a162db);
+    transition:all 0.5s;
+    background-repeat:no-repeat;
+    
 }
 
 .commander a:hover {
+
     /* l'effet de saut direct à l'animation est du au fait 
     que grandient n'est pas supporter par les navigateurs 
     avec la proprieté transition */
-    box-shadow: 0px 0px 10px 3px #555555;
-    background-image: linear-gradient(80deg, #ef91de, #a162db);
+    /*   Astuces usage des gradient avec les transitions   */
+    /* https://iamvdo.me/blog/astuce-utiliser-les-transitions-css-sur-les-degrades */
+    /* https://stackoverflow.com/questions/17952468/css-background-gradient-transition-not-working */
+  
+        /* background-image: linear-gradient(to left,#FDA7DF,#9980FA); */
+        background-position: 50%;
+        box-shadow: 0px 0px 10px 1.5px #a5a5a5;
+
+  
+  
+    /* animation-name: gradient-anim;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards; */
+    /* background-image: linear-gradient(80deg, #ef91de, #a162db); */
 }
+
+/* @keyframes gradient-anim{
+    from {
+        background-size: 150% 150%;
+        background-image: linear-gradient(180deg, #ef91de, #a162db);      
+    } to {
+        background-size: 100% 100%;
+        background-image: linear-gradient(80deg, #a162db, #ef91de);
+    }
+} */
 
 
 

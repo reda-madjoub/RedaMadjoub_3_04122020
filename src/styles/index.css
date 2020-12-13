@@ -1,3 +1,10 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v7.0.29,
+* Autoprefixer: v9.7.6
+* Browsers: last 4 version
+*/
+
 @font-face {
     font-family: shirkhand;
     src: url(../../Shrikhand-font/Shrikhand-Regular.ttf);
@@ -17,7 +24,8 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
     font-family: roboto;
     z-index: 0;
 }
@@ -32,16 +40,24 @@ body {
     height: 100%;
     z-index: -1;
     position: absolute;
-    animation-duration: 3s;
-    animation-name: loader;
+    -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+    -webkit-animation-name: loader;
+            animation-name: loader;
 }
 .loader {
     position: relative;
     width: 100%;
     height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 .loader-spinner {
     position: fixed;
@@ -50,19 +66,24 @@ body {
     border-radius: 50%;
     border: 10px solid#fff;
     border-bottom-color: transparent;
-    animation-duration: 3s;
-    animation-name: spinner;
-    animation-timing-function: linear;
+    -webkit-animation-duration: 3s;
+            animation-duration: 3s;
+    -webkit-animation-name: spinner;
+            animation-name: spinner;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
     visibility: hidden;
 }
 
-@keyframes spinner {
+@-webkit-keyframes spinner {
     0% { visibility: visible;
-        transform: rotate(0deg); 
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg); 
     }
     99% {
         visibility: visible;
-        transform: rotate(1560deg);
+        -webkit-transform: rotate(1560deg);
+                transform: rotate(1560deg);
     }
     100%{
         z-index: -1;
@@ -70,14 +91,44 @@ body {
     }
 }
 
-@keyframes loader {
+@keyframes spinner {
+    0% { visibility: visible;
+        -webkit-transform: rotate(0deg);
+                transform: rotate(0deg); 
+    }
+    99% {
+        visibility: visible;
+        -webkit-transform: rotate(1560deg);
+                transform: rotate(1560deg);
+    }
+    100%{
+        z-index: -1;
+        visibility: hidden;
+    }
+}
+
+@-webkit-keyframes loader {
     0% {
-        background-color : #9e69e0;
+        background-color : #9356DC;
         z-index: 2;
     }
     99% {
         z-index: 2;
-        background-color : #9e69e0;
+        background-color : #9356DC;
+    }
+    100%{
+        z-index: -1;
+  }
+}
+
+@keyframes loader {
+    0% {
+        background-color : #9356DC;
+        z-index: 2;
+    }
+    99% {
+        z-index: 2;
+        background-color : #9356DC;
     }
     100%{
         z-index: -1;
@@ -95,17 +146,29 @@ h1 {
 .localisation {
     width: 100%;
     height: 40px;
-    align-items: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     background-color: #eaeaea;
-    box-shadow: inset 0px 11px 3px -9px #CCC;
+    -webkit-box-shadow: inset 0px 11px 3px -9px #CCC;
+            box-shadow: inset 0px 11px 3px -9px #CCC;
 }
 .localisation-element {
     width: 93%;
     height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
 }
 .localisation i{
@@ -125,10 +188,19 @@ h1 {
 .reservation {
     width: 100%;
     background-color: #f6f6f6;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     text-align: center;
     padding: 40px 40px;
 }
@@ -149,16 +221,22 @@ h1 {
     border-radius: 30px;
     outline: none;
     cursor: pointer;
+    -webkit-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
     transition: all 0.3s ease-in;
     background-size: 200%;
-    background-image: linear-gradient(90deg ,#ef91de, #a162db);
+    background-image: -webkit-gradient(linear ,left top, right top ,from(#FF79DA) , to(#9356DC));
+    background-image: -o-linear-gradient(left ,#FF79DA , #9356DC);
+    background-image: linear-gradient(90deg ,#FF79DA , #9356DC);
     background-position: 80%;
-    box-shadow: 0px 0px 10px 1.5px #000;
+    -webkit-box-shadow: 0px 0px 10px 1.5px #000;
+            box-shadow: 0px 0px 10px 1.5px #000;
     /* background: linear-gradient(169deg, rgba(239,145,222,1) 3%, rgba(161,98,219,1) 87%); */
 }
 
 .reservation a:hover {
-    box-shadow: 0px 0px 20px 1.5px #000;
+    -webkit-box-shadow: 0px 0px 20px 1.5px #000;
+            box-shadow: 0px 0px 20px 1.5px #000;
     background-position: 30%;
     /* l'effet de saut direct à l'animation est du au fait 
     que grandient n'est pas supporter par les navigateurs 
@@ -175,6 +253,8 @@ h1 {
 .reservation > a:visited {
     color: #fff;
     text-decoration: none;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
     width: fit-content;
     height: auto;
 }
@@ -190,10 +270,19 @@ h1 {
 }
 .card-fonctionnement{
     margin: 10px 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 .etape {
     margin: 10px 0px;
@@ -202,16 +291,32 @@ h1 {
     width: 80%;
     height: 70px;
     padding-left: 30px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     box-shadow: 0 7px 9px rgba(0, 0, 0, 0.1); 
 	-webkit-box-shadow: 0 7px 9px rgba(0, 0, 0, 0.1); 
     -moz-box-shadow: 0 7px 9px rgba(0, 0, 0, 0.1);
     border-radius: 20px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s; 
 }
+
+.etape:hover {
+    width: 85%;
+}
+
 @media (min-width: 600px) {
     .etape {
         width: 60% !important;
@@ -222,16 +327,19 @@ h1 {
 }
 .etape:hover {
     background-color: #f5edff;
-    box-shadow: 10px 20px 19px rgba(0, 0, 0, 0.1); 
+    -webkit-box-shadow: 10px 20px 19px rgba(0, 0, 0, 0.1);
+            box-shadow: 10px 20px 19px rgba(0, 0, 0, 0.1); 
 
 }
 
 .etape > i {
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
     transition: 0.3s; 
 }
 
 .etape:hover > i {
-    color: #9e69e0;
+    color: #9356DC;
 }
 .etape > i {
     padding-left: 10px;
@@ -248,14 +356,23 @@ h1 {
     position: absolute;
     top: 23px;
     left: -10px;
-    background-color: #9e69e0;
+    background-color: #9356DC;
     color: #fff;
     width: 25px;
     height: 25px;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row nowrap;
+            flex-flow: row nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     border-radius: 50%;
 }
 
@@ -270,20 +387,32 @@ h1 {
 }
 
 .cards-restaurant-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-flow: column nowrap;
-    justify-content: center;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding-bottom: 70px;
 }
 
 .card-restaurant {
-    box-shadow: 0px 0px 10px 2px #424242;
+    -webkit-box-shadow: 0px 0px 10px 2px #424242;
+            box-shadow: 0px 0px 10px 2px #424242;
     position: relative;
     width: 90%;
     background-color: #fff;
     border-radius: 20px;
     margin-bottom: 20px;
+    -webkit-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
     transition: all 0.5s ease;
 
 }
@@ -298,7 +427,8 @@ h1 {
 }
 
 .card-restaurant:hover {
-    box-shadow: 0px 0px 10px 2px #424242;
+    -webkit-box-shadow: 0px 0px 10px 2px #424242;
+            box-shadow: 0px 0px 10px 2px #424242;
     width: 93%;
 }
 
@@ -327,12 +457,18 @@ h1 {
     border: none;
     background-color: #fff;
     font-size: 18px;
+    cursor: -webkit-grab;
     cursor: grab;
-    
+}
+@media (max-width: 280px) {
+    .like-button button {
+        font-size: 14px;
+    }
+
 }
 
 .like-button button:hover {
-    background: -webkit-linear-gradient(45deg, rgba(239,145,222,1) 3%, rgba(161,98,219,1) 87%);
+    background: -webkit-linear-gradient(45deg, rgba(255, 121, 218, 1) 3%, rgba(147, 86, 220, 1) 87%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     border: none;
@@ -349,13 +485,14 @@ h1 {
     height: 150px;
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
-    object-fit: cover;
+    -o-object-fit: cover;
+       object-fit: cover;
 }
 
 .card-restaurant a > p {
     position: absolute;
     padding: 10px;
-    background-color: #98e1cf;
+    background-color: #99E2D0;
     color: #35a78b;font-weight: bold;
     top: 15px;
     right: 2%;
